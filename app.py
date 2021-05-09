@@ -1,7 +1,8 @@
 from flask import Flask,render_template,jsonify
+from flask_cors import CORS,cross_origin
 
 app = Flask(__name__)
-
+CORS(app)
 usersdata=[
     {"name":"Kishore","age":21,"dob":"04-11-2000","email":"kishore4110@gmail.com","firstname":"Kishore","lastname":"B","img":"https://avatars.githubusercontent.com/u/31382690?v=4","more":{"address":"1/119 unkown village, udumalpet","district":"tiruppur","pincode":642122}},
     {"name":"Person1","age":24,"dob":"04-11-1986","email":"person1@gmail.com","firstname":"Person","lastname":"1","img":"https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg","more":{"address":"1/23,unknown location","district":"texas","pincode":641024}},
@@ -16,6 +17,7 @@ usersdata=[
 ]
 
 @app.route('/users')
+@cross_origin()
 def users():
     return jsonify(usersdata)
 
