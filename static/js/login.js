@@ -1,4 +1,7 @@
 let users=localStorage.getItem('users');
+if(users==null){
+    localStorage.setItem('users',JSON.stringify({"admin":"admin"}));
+}
 users=JSON.parse(users)
 let signUpButton = document.getElementById('signUp');
 let signInButton = document.getElementById('signIn');
