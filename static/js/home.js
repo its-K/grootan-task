@@ -1,7 +1,7 @@
 let users;
 $.ajax({ 
 	type: 'GET',
-    url: 'http://127.0.0.1:5000/users', 
+    url: 'https://grootan-task.herokuapp.com/users', 
     success: function(response){ 
         co=0;
         users=response;
