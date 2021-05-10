@@ -1,4 +1,9 @@
 let users;
+let login=localStorage.getItem('login');
+
+if(login!=="true"){
+    window.location.href = "/";
+}
 $.ajax({ 
 	type: 'GET',
     url: 'https://grootan-task.herokuapp.com/users', 
@@ -71,4 +76,9 @@ function prev(val){
         showdetails(val);
     }
     console.log("kise");
+}
+
+function logout(){
+    localStorage.removeItem("login");
+    window.location.href = "/"; 
 }

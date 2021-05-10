@@ -22,7 +22,8 @@ document.getElementById('login').addEventListener('click',()=>{
     let user = document.getElementById('useremail').value;
     let pass = document.getElementById('userpass').value;
     if(users!=null && users[user]==pass){
-        window.location.replace("/home");
+        localStorage.setItem('login',"true");
+        window.location.href = "/home";
     }
     else{
         document.getElementById('login-msg').textContent="Wrong email/password";
